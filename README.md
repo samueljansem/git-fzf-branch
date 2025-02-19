@@ -13,12 +13,13 @@ Make sure you have the following installed:
 
 1. Download the script:
   ```bash
-    curl -o ~/bin/git-fzf-branch.sh https://raw.githubusercontent.com/samueljansem/git-fzf-branch/main/git-fzf-branch.sh
+    curl -o ~/bin/git-fzf-branch https://raw.githubusercontent.com/samueljansem/git-fzf-branch/main/git-fzf-branch.sh
   ```
 2. Grant execution permissions:
   ```bash
-    chmod +x ~/bin/git-fzf-branch.sh
+    chmod +x ~/bin/git-fzf-branch
   ```
+Note: Make sure to add the `~/bin` folder to your `PATH`
 
 ## 🔥 Features
 - 🔍 Type to fuzzy find branches
