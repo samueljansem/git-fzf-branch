@@ -26,8 +26,6 @@ selected_branch=$(
   git for-each-ref --sort=-committerdate --format='%(refname:short)|%(committerdate:relative)' refs/heads refs/remotes/origin |
   sed -E 's#^origin/##' | awk -F'|' '$1 != "origin" && !seen[$1]++' | column -t -s '|' |
     fzf --height=50% --border --layout=reverse --nth 1 \
-      --preview "git show --color=always --stat {1} 2>/dev/null || git show --color=always --stat origin/{1} 2>/dev/null" \
-      --preview-window=right:60%:wrap \
       --bind "ctrl-r:reload(git fetch --all --prune && git for-each-ref --sort=-committerdate --format='%(refname:short)|%(committerdate:relative)' refs/heads refs/remotes/origin | sed -E 's#^origin/##' | awk -F'|' '\$1 != \"origin\" && !seen[\$1]++' | column -t -s '|')" \
       --bind "ctrl-y:execute(
         echo -n {1} | { 
